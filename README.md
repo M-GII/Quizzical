@@ -1,29 +1,61 @@
 # Quizzical
 
-A React trivia app that fetches questions from the Open Trivia Database. This version includes custom controls for number of questions, question type, and difficulty, plus a results screen with correct/incorrect highlighting.
-This project was developed as a **solo capstone project at the end of the Scrimba React Course**, bringing together everything I learned in React from state management and effects to API integration and conditional rendering.
+A customizable React trivia application that fetches real-time questions from the Open Trivia Database API. Users can configure quiz settings, answer interactive questions, and receive instant feedback with score tracking and result highlighting.
 
-## Demo
-- [Live Site](https://quizzical-manrojgill.netlify.app/)
+## 🚀 Live Demo
+🔗 https://quizzical-manrojgill.netlify.app/
 
-## Description
-Quizzical lets users configure a quiz and then answer a series of questions. Questions and answers are HTML-entity decoded for readability, answers are shuffled per question, and the app enforces that all questions are answered before checking results. After submission, the UI shows which selections were correct or wrong and displays the final score, with an option to play again.
+---
 
-## Features
-- Choose number of questions (5–15)
-- Select question type: Multiple Choice or True/False
-- Select difficulty: Easy, Medium, Hard
-- Decodes HTML entities in questions/answers for clean text
-- Randomizes the placement of the correct answer among options
-- Prevents submission until all questions have a selection
-- Highlights results: green for correct, red for incorrect
-- Shows final score and allows restarting the quiz
+## 📌 Overview
 
-## How It Works
-- Data source: [Open Trivia Database API](https://opentdb.com/)
-- Dynamic API URL built from user selections (`amount`, `type`, `difficulty`)
-- Answer options are constructed by combining the correct answer with incorrect ones and inserting the correct answer at a random index
-- Result checking:
-  - Before submit: selected options are tracked per question
-  - After submit: correct and incorrect selections are styled differently
-  - Score is computed by counting selected options that are correct
+Quizzical is a single-page React application built with modern React fundamentals including state management, effects, controlled components, and API integration. The app dynamically generates quizzes based on user-selected parameters and provides a polished results experience with conditional styling and score calculation.
+
+---
+
+## ✨ Key Features
+
+- Configurable number of questions (5–15)
+- Selectable question type: Multiple Choice or True/False
+- Selectable difficulty: Easy, Medium, Hard
+- Dynamic API requests based on user input
+- HTML entity decoding for clean question formatting
+- Randomized answer placement for each question
+- Prevents submission until all questions are answered
+- Visual feedback:
+  - Correct answers highlighted in green
+  - Incorrect selections highlighted in red
+- Final score calculation
+- Restart functionality to generate a new quiz session
+
+---
+
+## 🛠 Technical Implementation
+
+- Built with React (functional components and hooks)
+- `useState` for state management
+- `useEffect` for API data fetching
+- Controlled form inputs for quiz configuration
+- Conditional rendering for results view
+- Dynamic URL generation using query parameters:
+  - `amount`
+  - `type`
+  - `difficulty`
+- Score calculated by comparing selected answers against correct answers
+- Answer options built by combining correct/incorrect answers and inserting the correct answer at a randomized index
+
+---
+
+## 🌐 Data Source
+
+Open Trivia Database API  
+https://opentdb.com/
+
+---
+
+## 📈 Future Improvements
+
+- **Persist scores and settings** using `localStorage` (save best score, last score, and preferred quiz settings)
+- **Add a leaderboard-style stats panel** (best score, average score, streaks, total quizzes played)
+- **Add a backend (Node.js/Express)** to store quiz history and scores for cross-device persistence
+- **Accessibility upgrades** (ARIA labels, keyboard navigation, focus management, improved contrast)
