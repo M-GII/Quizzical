@@ -1,0 +1,161 @@
+body {
+  background-color: #F5F7FB;
+  font-family: "Karla", sans-serif;
+  color: #293264;
+  height: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url('./images/yellowblob.png'), url('./images/blueblob.png');
+  background-repeat: no-repeat, no-repeat;
+   background-position: top right, bottom  left ;
+  background-size: 200px, 200px;
+}
+
+section.starting-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  text-align: center;
+
+}
+section.starting-page > h1{
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 31.25px;
+  margin-bottom: 0px;
+}
+
+section.starting-page > p{
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+section.starting-page > section.selections{
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column ;
+  margin-top: 40px;
+}
+section.starting-page >section.selections> label{
+  margin-bottom: 30px;
+}
+section.starting-page >section.selections> label > select , input{
+  font-family: "Karla", sans-serif;
+  color: #293264;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 5px 5px;
+  text-align: center;
+  margin-left: 8px;
+
+}
+section.starting-page >section.selections> label > select > option{
+  margin-left: 50px;
+
+}
+section.starting-page > button{
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+
+section.Questions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  text-align:center ;
+  margin: 0 auto;
+}
+section.Questions > .Question {
+  border-bottom: 1px solid #DBDEF0;
+}
+section.Questions > .Question > .answer-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+section.Questions > .Question > .answer-buttons > .answer-btn{
+  background-color:#F5F7FB ;
+  border: 1px solid #4D5B9E;
+  border-radius:7.71px ;
+  color:#293264;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  padding: 4px 16px;
+  margin: 4px;
+  cursor: pointer;
+
+}
+
+section.Questions > .Question > .answer-buttons >.answer-btn.option-selected{
+  background-color: #D6DBF5;
+  border: none
+}
+
+section.Questions > .check-ansBtn{
+  color: #F5F7FB;
+  background-color: #4D5B9E;
+  margin-top: 35px;
+  padding:15px 20px ;
+  border-radius: 10px;
+  border: none;
+  width: 15%;
+  height: 7%;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12x;
+}
+section.Questions > .Question > .answer-buttons >.answer-btn.correct{
+  background-color:#94D7A2;
+  border: none;
+  
+}
+section.Questions > .Question > .answer-buttons >.answer-btn.wrong{
+  background-color:#F8BCBC;
+  border: none;
+}
+section.Questions > .display-correctAns{
+  width: 50%;
+  margin-top: 15px;
+  display: flex;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+section.Questions > .display-correctAns > button{
+  margin-left: 10px;
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  font-family: "Karla", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 15px;
+
+}
