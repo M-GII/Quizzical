@@ -159,3 +159,94 @@ section.Questions > .display-correctAns > button{
   margin-left: 15px;
 
 }
+
+
+section.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+section.login-page > h1 {
+    font-weight: 700;
+    font-size: 31.25px;
+    color: #293264;
+    margin-bottom: 4px;
+}
+
+.login-divider {
+    width: 40px;
+    height: 2px;
+    background-color: #293264;
+    margin-bottom: 32px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.login-form input {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    color: #293264;
+    border: 1px solid #293264;
+    border-radius: 5px;
+    padding: 10px 14px;
+    background: #F5F7FB;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-toggle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-toggle span {
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    color: #4D5B9E;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.login-form button {
+    background-color: #4D5B9E;
+    color: #F5F7FB;
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+}
+
+.nav-btn button {
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #F5F7FB;
+  background-color: #4D5B9E;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
