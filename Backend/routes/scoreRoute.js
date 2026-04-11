@@ -1,10 +1,11 @@
 import express from "express"
-import { addScore, getBestScores , getRecentScores } from "../controllers/scoreController.js";
+import { addScore, getBestScores , getRecentScores ,getStats} from "../controllers/scoreController.js";
 
 const scoreRouter = express.Router()
 
 scoreRouter.post('/add', addScore)
-scoreRouter.get('/recentTen', getRecentScores)
+scoreRouter.get('/recent', getRecentScores)
 scoreRouter.get('/best', getBestScores)
+scoreRouter.get('/stats', getStats)
 
 export default scoreRouter

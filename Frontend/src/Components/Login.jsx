@@ -1,15 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
-export default function Login({ setToken, token, setShowLoginPage, backendUrl , setShowQuestionsPage, previousPage }) {
+export default function Login({ setToken,setPage, backendUrl , previousPage }) {
     const [isLogin, setIsLogin] = useState(true)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
-    useEffect(() => {
-        if (token) setShowLoginPage(false)
-    }, [token])
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
@@ -20,26 +16,24 @@ export default function Login({ setToken, token, setShowLoginPage, backendUrl , 
                     setToken(response.data.token)
                     localStorage.setItem("token", response.data.token)
                     toast.success(response.data.message);
-                    setShowLoginPage(false)
-                    if (previousPage === "questions") {
-                        setShowQuestionsPage(true)
-                    } else {
-                        setShowQuestionsPage(false)
+                    if (previousPage === "stats") {
+                        setPage("start")
                     }
-                }
+                    else{
+                    setPage(previousPage)
+                }}
             } else {
                 const response = await axios.post(backendUrl + "/api/user/login", { email, password })
                 if (response.data.success) {
                     setToken(response.data.token)
                     localStorage.setItem("token", response.data.token)
                     toast.success(response.data.message);
-                    setShowLoginPage(false)
-                    if (previousPage === "questions") {
-                        setShowQuestionsPage(true)
-                    } else {
-                        setShowQuestionsPage(false)
-                    }
-                }
+                     if (previousPage === "stats") {
+                        setPage("start")
+                    } 
+                    else{
+                    setPage(previousPage)
+                }}
             }
         } catch (error) {
             console.error(error?.response?.data?.message || "Error during authentication")
