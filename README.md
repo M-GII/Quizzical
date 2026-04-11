@@ -96,15 +96,14 @@ GET  /api/score/best
 ---
 
 ## 🗄️ Score Data
+ - userId
+ - correctAnswers
+ - percentage
+ - totalQuestions
+ - typeOfQuestions
+ - difficulty
+ - date
 
-Each score includes:
-
-- userId
-- correctAnswers
-- totalQuestions
-- percentage
-- category
-- typeOfQuestions
 
 ---
 
