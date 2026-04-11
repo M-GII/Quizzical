@@ -1,48 +1,68 @@
-# Quizzical
+# 🧠 Quizzical
 
-A customizable React trivia application that fetches real-time questions from the Open Trivia Database API. Users can configure quiz settings, answer interactive questions, and receive instant feedback with score tracking and result highlighting.
+A full-stack trivia application that generates real-time quizzes using the Open Trivia Database API and tracks user performance with a custom backend.
 
 ## 🚀 Live Demo
-🔗 https://quizzical-manrojgill.netlify.app/
+
+🔗 Frontend: https://quizzical-manrojgill.vercel.app/  
+🔗 Backend: https://quizzical-lwpu.onrender.com  
+
+⚠️ Backend is hosted on Render (free tier) → initial requests may take ~30 seconds to load
+## 📸 Screenshots
+
+### Start Page
+![Start Page](./Screenshots/startpage.png)
+
+### Quiz In Progress
+![Quiz](./Screenshots/questions.png)
+
+### Stats Dashboard
+![Stats](./Screenshots/stats.png)
+
+---
 
 ---
 
 ## 📌 Overview
 
-Quizzical is a single-page React application built with modern React fundamentals including state management, effects, controlled components, and API integration. The app dynamically generates quizzes based on user-selected parameters and provides a polished results experience with conditional styling and score calculation.
+Quizzical is a full-stack application built with React and a Node.js/Express backend. Users can generate quizzes with custom settings, answer interactive questions, and track their performance through a persistent stats system.
 
 ---
 
 ## ✨ Key Features
 
+### Quiz Functionality
 - Configurable number of questions (5–15)
-- Selectable question type: Multiple Choice or True/False
-- Selectable difficulty: Easy, Medium, Hard
-- Dynamic API requests based on user input
-- HTML entity decoding for clean question formatting
-- Randomized answer placement for each question
-- Prevents submission until all questions are answered
-- Visual feedback:
-  - Correct answers highlighted in green
-  - Incorrect selections highlighted in red
-- Final score calculation
-- Restart functionality to generate a new quiz session
+- Selectable difficulty and question type
+- Dynamic API requests using Open Trivia DB
+- Randomized answer placement
+- Real-time answer validation
+- Score calculation and feedback
+- Restartable quiz sessions
+
+### User & Stats System
+- User authentication (JWT-based)
+- Score persistence in database
+- Personalized stats:
+  - Top scores
+  - Recent attempts
 
 ---
 
-## 🛠 Technical Implementation
+## 🛠 Tech Stack
 
-- Built with React (functional components and hooks)
-- `useState` for state management
-- `useEffect` for API data fetching
-- Controlled form inputs for quiz configuration
-- Conditional rendering for results view
-- Dynamic URL generation using query parameters:
-  - `amount`
-  - `type`
-  - `difficulty`
-- Score calculated by comparing selected answers against correct answers
-- Answer options built by combining correct/incorrect answers and inserting the correct answer at a randomized index
+### Frontend
+- React (Vite)
+- JavaScript (ES6+)
+- Axios
+- React Toastify
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT
+- bcrypt
 
 ---
 
@@ -51,11 +71,43 @@ Quizzical is a single-page React application built with modern React fundamental
 Open Trivia Database API  
 https://opentdb.com/
 
+- Dynamic query parameters:
+  - amount
+  - difficulty
+  - type
+- Handles empty responses and API edge cases
+- Uses `he` to decode HTML entities
+
 ---
 
-## 📈 Future Improvements
+## 📡 API Routes
 
-- **Persist scores and settings** using `localStorage` (save best score, last score, and preferred quiz settings)
-- **Add a leaderboard-style stats panel** (best score, average score, streaks, total quizzes played)
-- **Add a backend (Node.js/Express)** to store quiz history and scores for cross-device persistence
-- **Accessibility upgrades** (ARIA labels, keyboard navigation, focus management, improved contrast)
+### Auth
+POST /api/user/register  
+POST /api/user/login  
+
+### Scores (requires token)
+POST /api/score/add  
+GET  /api/score/recent  
+GET  /api/score/best  
+
+---
+
+## 🗄️ Score Data
+
+Each score includes:
+
+- userId
+- correctAnswers
+- totalQuestions
+- percentage
+- category
+- typeOfQuestions
+
+---
+
+## ⚠️ Notes
+
+- Scores are tied to authenticated users
+- Percentage is calculated before saving
+- Quiz generation depends on external API availability
