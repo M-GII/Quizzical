@@ -16,6 +16,8 @@ A full-stack trivia application that generates real-time quizzes using the Open 
 ### Quiz In Progress
 ![Quiz](./Screenshots/questions.png)
 
+### Answers 
+![Answers](./Screenshots/answers.png)
 ### Stats Dashboard
 ![Stats](./Screenshots/stats.png)
 
